@@ -1,15 +1,18 @@
-import PyQt5.QtWidgets as qtw 
 import os
 import sys
+import shutil
 import random
 import time
-import shutil
+import PyQt5.QtWidgets as qtw 
+
 isBackedUp = False
 
-user = os.getlogin()
+user = os.getlogin() # get username to automatically set directories
 soundDir = f"C:/Users/{user}/AppData/local/Growtopia/audio"
 gameDir = f"C:/Users/{user}/AppData/local/Growtopia"
-nameList = []
+nameList = [] # list of all file names
+
+# PyQt window
 class mainWindow(qtw.QWidget):
     def __init__(self):
         super().__init__()
@@ -19,13 +22,14 @@ class mainWindow(qtw.QWidget):
         self.keypad()
         self.setFixedSize(400, 220)
         
-    
+    # PyQt grid layout for content
     def keypad(self):
         container = qtw.QWidget()
         container.setLayout(qtw.QGridLayout())
         self.show()
             
-        def backupcheck():
+            
+        def backupcheck(): # function to check if user has backed up original sound files
             global isBackedUp
             if os.path.exists(f"{gameDir}/audioBackup"):
                 self.statusText.setText("Status: Backed up.")
@@ -39,14 +43,14 @@ class mainWindow(qtw.QWidget):
                 
                 
             
-        def backup():
+        def backup(): # backup function
             if isBackedUp == False:
                 shutil.copytree(soundDir, f"{gameDir}/audioBackup/")
                 backupcheck()
             else:
                 return
             
-        def restore():
+        def restore(): # restore funciton
             if isBackedUp == False:
                 print("dieke")
                 self.statusText.setText = "Nothing to restore!"
@@ -54,9 +58,10 @@ class mainWindow(qtw.QWidget):
                 shutil.rmtree(f"{soundDir}")
                 shutil.copytree(f"{gameDir}/audioBackup", soundDir)
         
-        def clearCache():
+        def clearCache(): # clear cache folder to prevent double game sounds
             shutil.rmtree(f"{gameDir}/cache/audio")
-        def startRandom():
+            
+        def startRandom(): # randomization function
             self.console.setText("Starting...")
             try:
                 for filename in os.listdir(soundDir):
@@ -93,6 +98,7 @@ class mainWindow(qtw.QWidget):
             time.sleep(1.5)
             self.console.setText("Ready to launch Growtopia!")
         
+        # PyQt content
         textButton = qtw.QPushButton("Growtopia Sound Randomizer")
         textButton.setStyleSheet("color: white; border: 0px #1f1212; background-color: #121212")
         container.layout().addWidget(textButton, 0, 0, 1, 0)
@@ -126,7 +132,8 @@ class mainWindow(qtw.QWidget):
         self.console.setReadOnly(True)
         container.layout().addWidget(self.console, 5, 0, 1, 2)
         
-        self.layout().addWidget(container)
+        self.layout().addWidget(container) # add container to window
+        
 app = qtw.QApplication([])
 app.setStyle('Fusion')
 mw = mainWindow()
