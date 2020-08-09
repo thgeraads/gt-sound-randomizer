@@ -9,6 +9,8 @@ _Note: Modifying the Growtopia game files is technically illegal and might get y
 1. Download the .exe file from the [releases tab](https://github.com/thgeraads/gt-sound-randomizer/releases).
 2. Run the `randomizer.exe`file.
 
+_If your browser/Windows SmartScreen says that this app is not safe to run, don't worry. This is because the app doesn't have a valid certificate. Click more info > run anyway. If you don't feel comfortable running the EXE, you can look into the source code yourself. Or follow the "Other OS" instructions below._
+
 
 ### Other OS
 1. Download and install Python 3.8 (obviously).
