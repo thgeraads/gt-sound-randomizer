@@ -5,10 +5,16 @@ _Note: Modifying the Growtopia game files is technically illegal and might get y
 
 # Installation
 
-1. Download and install Python 3.8 (obviously)
-2. Download the .py file from the releases tab
-3. Run `pip3 install -r requirements.txt`
-4. Run the `randomizer.py` file
+### Windows
+1. Download the .exe file from the releases tab.
+2. Run the `randomizer.exe`file.
+
+
+### Other OS
+1. Download and install Python 3.8 (obviously).
+2. Download the .py file from the releases tab.
+3. Run `pip3 install -r requirements.txt`.
+4. Run the `randomizer.py` file.
 
 
 # Usage
