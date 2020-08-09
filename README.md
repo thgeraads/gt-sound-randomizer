@@ -27,5 +27,5 @@ _If your browser/Windows SmartScreen says that this app is not safe to run, don'
 4. When that's done, hit the `Clear cache folder` button. Do this every time you launch Growtopia if needed.
 5. You're done! If you ever want to go back to the original sounds just click `Restore` and wait a few seconds.
 
-This program is a bit ubstable. Only click a button **once** and then just wait until you get a response.
+This program is a bit unstable. Only click a button **once** and then just wait until you get a response.
 If at any time the program stops responding, **just wait** until the window becomes responsive again. It just does that sometimes.
